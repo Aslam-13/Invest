@@ -16,10 +16,7 @@ export default function Home() {
         <Link href="/latest">
         <Options value={"latest"}/>
         </Link>
-        <Link href="/range">
-        <Options value={"range"}/>
-        </Link>
-      </div>
+v      </div>
         
     </div>
      
