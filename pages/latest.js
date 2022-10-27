@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const latest = () => {
   const [from , setFrom] = useState("");
@@ -8,7 +9,7 @@ const latest = () => {
 
   const handleClick = async ()=>{
     var myHeaders = new Headers();
-    myHeaders.append("apikey", "ugZuBOT5jWoqXYFbqK30l0O1UF00XBLh");
+    myHeaders.append("apikey", "IEY8kG6OpalcHIvoHJdRuSMLoGQJuROz");
   
     var requestOptions = {
       method: 'GET',
@@ -24,9 +25,11 @@ const latest = () => {
       }
  
   return (
-     <div className="w-screen h-screen bg-teal-600 flex flex-col">
+     <div className="w-screen h-screen bg-teal-600 flex flex-col md:w-fit">
   <div className="w-screen h-32 flex items-center">
-    <h1 className="font-mono text-6xl font-bold text-slate-900 opacity-75 ml-10">CoinChange</h1>
+    <Link href="/">
+        <h1 className="font-mono text-6xl md:text-3xl sm:text-2xl font-bold cursor-pointer text-slate-900 opacity-75 ml-10">CoinChange</h1>
+        </Link>
   </div>
   <div className=" w-screen h-96 flex flex-wrap items-center justify-center " >
       <input 
@@ -48,7 +51,7 @@ const latest = () => {
     <div></div>
     :
     <div className='flex items-center justify-center'>
-      <p className="font-mono text-6xl font-bold text-slate-900 opacity-75 ml-10">Result: {val[Object.keys(val)[0]]}</p>
+      <p className="font-mono text-xl md:text-4xl sm:text-3xl font-bold text-slate-900 opacity-75 ml-10">Result: {val[Object.keys(val)[0]]}</p>
     </div>
   }
     

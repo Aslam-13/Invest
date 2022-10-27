@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const convert = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [amount, setAmount] = useState("");
   const [ val, setVal] = useState("");
-  const handleClick = async  ()=> {
+   const handleClick = async  ()=> {
   var myHeaders = new Headers();
   myHeaders.append("apikey", "IEY8kG6OpalcHIvoHJdRuSMLoGQJuROz");
 
@@ -25,7 +26,9 @@ const convert = () => {
   return (
     <div className="w-screen h-screen bg-teal-600 flex flex-col">
     <div className="w-screen h-32 flex items-center">
-      <h1 className="font-mono text-6xl font-bold text-slate-900 opacity-75 ml-10">CoinChange</h1>
+      <Link href="/">
+        <h1 className="font-mono text-6xl md:text-3xl sm:text-2xl font-bold cursor-pointer text-slate-900 opacity-75 ml-10">CoinChange</h1>
+        </Link>
     </div>
      <div className=" w-screen h-96 flex flex-wrap items-center justify-center " >
       <input  
@@ -54,7 +57,7 @@ const convert = () => {
     <div></div>
     :
     <div className='flex items-center justify-center'>
-      <p className="font-mono text-6xl font-bold text-slate-900 opacity-75 ml-10">Result: {val}</p>
+      <p className="font-mono text-6xl md:text-4xl sm:text-3xl font-bold text-slate-900 opacity-75 ml-10">Result: {val}</p>
     </div>
   }
      
